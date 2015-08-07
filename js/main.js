@@ -1,5 +1,4 @@
 function displayPackages(responsePackages){
-  debugger;
   var source = $("#packageTemplate").html();
   var template = Handlebars.compile(source);
   var output = template(responsePackages);
@@ -15,3 +14,22 @@ Handlebars.registerHelper('addCohortButton', function(cohort) {
     "<button class='" + buttonClass + "'>" + buttonText + "</button>"
   );
 });
+
+Handlebars.registerHelper("debug", function(optionalValue) {
+  console.log("Current Context");
+  console.log("====================");
+  console.log(this);
+ 
+  if (optionalValue) {
+    console.log("Value");
+    console.log("====================");
+    console.log(optionalValue);
+  }
+});
+
+function displayPortfolios(responsePackages){
+  var source = $("#portfolioTemplate").html();
+  var template = Handlebars.compile(source);
+  var output = template(responsePackages);
+  $("#portfolios").append(output);
+}
