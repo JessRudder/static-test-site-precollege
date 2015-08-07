@@ -45,11 +45,22 @@
               </div>
             </div>
             <div class="panel-footer text-center">
-              <a href="mailto:{{../user_email}}" target="_blank"><span class="glyphicon glyphicon-envelope"></span></a>
-              <a href="http://facebook.com/{{../portfolio_sections.facebook_username}}" target="_blank"><span class="fa fa-facebook"></span></a>
-              <a href="http://twitter.com/{{portfolio_sections.twitter_username}}" target="_blank"><span class="fa fa-twitter"></span></a>
-              <a href="http://github.com/{{portfolio_sections.github_username}}" target="_blank"><span class="glyphicon glyphicon-transfer"></span></a>
-              <a href="http://instagram.com/{{portfolio_sections.instagram_username}}" target="_blank"><span class="glyphicon glyphicon-camera"></span></a>
+              {{#if ../user_email}}
+                <a href="mailto:{{../user_email}}" target="_blank"><span class="glyphicon glyphicon-envelope"></span></a>
+              {{/if}}
+              {{#if ../portfolio_sections.facebook_username}}
+                {{debug}}
+                <a href="http://facebook.com/{{../../portfolio_sections.facebook_username}}" target="_blank"><span class="fa fa-facebook"></span></a>
+              {{/if}}
+              {{#if ../portfolio_sections.twitter_username}}
+               <a href="http://twitter.com/{{../../portfolio_sections.twitter_username}}" target="_blank"><span class="fa fa-twitter"></span></a>
+              {{/if}}
+              {{#if ../portfolio_sections.github_username}}
+                <a href="http://github.com/{{../../portfolio_sections.github_username}}" target="_blank"><span class="glyphicon glyphicon-transfer"></span></a>
+              {{/if}}
+              {{#if ../portfolio_sections.portfolio_username}}
+                <a href="http://instagram.com/{{../../portfolio_sections.instagram_username}}" target="_blank"><span class="glyphicon glyphicon-camera"></span></a>
+              {{/if}}
             </div>
           </div>
         </div>
