@@ -26,7 +26,7 @@
     <script id="portfolioTemplate" type="text/x-handlebars-template">
       {{#portfolios}}
         {{#projects}}
-        <div class="col-xs-12 col-med-10 col-med-offset-1" data-project-id="{{id}}">
+        <div class="col-xs-12 col-md-8 col-md-offset-2" data-project-id="{{id}}">
           <div class="panel panel-default">
             <div class="panel-image">
               <img src="{{screenshot.url}}" class="panel-image-preview" />
@@ -34,15 +34,22 @@
             </div>
             <input type="checkbox" id="toggle-{{id}}" checked class="panel-image-toggle">
             <div class="panel-body">
-              <h4>{{project_sections.title}}</h4>
-              <p>{{project_sections.description}}</p>
+              <div class="row">
+                <div class="col-sm-2">
+                  <img src="{{../avatar.url}}" class="avatar"/>
+                </div>
+                <div class="col-sm-10">
+                  <h4>{{project_sections.title}}</h4>
+                  <p>{{project_sections.description}}</p>
+                </div>
+              </div>
             </div>
             <div class="panel-footer text-center">
               <a href="mailto:{{../user_email}}" target="_blank"><span class="glyphicon glyphicon-envelope"></span></a>
               <a href="http://facebook.com/{{../portfolio_sections.facebook_username}}" target="_blank"><span class="fa fa-facebook"></span></a>
               <a href="http://twitter.com/{{portfolio_sections.twitter_username}}" target="_blank"><span class="fa fa-twitter"></span></a>
               <a href="http://github.com/{{portfolio_sections.github_username}}" target="_blank"><span class="glyphicon glyphicon-transfer"></span></a>
-              <a href="http://instagram.com/{{portfolio_sections.instagram_username}}" target="_blank"><span class="glyphicon glyphicon-transfer"></span></a>
+              <a href="http://instagram.com/{{portfolio_sections.instagram_username}}" target="_blank"><span class="glyphicon glyphicon-camera"></span></a>
             </div>
           </div>
         </div>

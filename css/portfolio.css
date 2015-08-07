@@ -45,3 +45,9 @@
   font-size: 1.3em;
   color: rgb(100, 100, 100);
 }
+
+.avatar{
+  max-width: 100px;
+  height: auto;
+  border-radius: 50px;
+}
